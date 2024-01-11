@@ -1,6 +1,7 @@
 #include "game.h"
 #include "player_list.h"
 #include <iomanip>
+#include <algorithm>
 
 game::game()
 {
@@ -15,23 +16,34 @@ void game::roll_dice()
 
 void game::play_game()
 {
-
 	players.set_player_list();
 
 	int number_of_players = players.get_player_names().size();
 
-	//std::cout << "\n\t\tPress Enter to start the game!\n";
-	std::cout <<std:: setfill(' ') << std::setw(70) << "Press Enter to start the game!" <<std::endl;
-	std::cin.ignore();
-
+	std::cout << std::setfill(' ') << std::setw(70) << "Press Enter to start the game!" << std::endl;
+	std::cin.get();
 
 	for (int i = 0; i < number_of_players; ++i) {
 		std::cout << "\n" << players.get_player_names()[i] << ", it's your turn to roll the dice. Press Enter to roll...";
-		std::cin.ignore(); // Wait for Enter key
+		std::cin.get(); // Wait for Enter key
 		roll_dice();
 		std::cout << "You rolled a " << dice_result << "!\n";
 		players.set_game_results(i, dice_result);
 	}
+
+	std::cout << "\n";
+	std::cout << std::setfill(' ') << std::setw(70) << "Press Enter to to see the reuslt!" << std::endl;
+	std::cin.get();
+
+
+	
+
+	seting_winner(); 
+};
+
+
+void game::seting_winner()
+{
 
 	std::cout << "\nFinal Results:\n";
 	const std::vector<int>& results = players.get_game_results();
@@ -56,11 +68,12 @@ void game::play_game()
 	}
 
 	if (count_winners == 1) {
-		std::cout << "\nWinner: " << players.get_player_names()[winning_player_index] << " with the highest score of " << max_result << "!\n";
+		std::cout << "\n" << players.get_player_names()[winning_player_index] << " wins with the highest score of " << max_result << "!\n";
 	}
 	else {
 		std::cout << "\nIt's a tie! Multiple players have the highest score of " << max_result << "!\n";
 	}
+	std::cout << "\n";
+	std::cout << std::setfill('*') << std::setw(120) << "*" << std::endl;
 }
-
 

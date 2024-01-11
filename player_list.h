@@ -17,5 +17,3 @@ private:
 	std::vector<std::string> player_names;
 	std::vector<int> game_results;
 };
-
-
