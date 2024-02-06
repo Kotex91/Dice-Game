@@ -1,0 +1,6 @@
+D:	 2
+I:	 1
+C:	 3
+E:	 2
+
+C won with the highest score of 3!

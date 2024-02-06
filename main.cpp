@@ -10,16 +10,15 @@ int main()
 	window.set_intro();
 
 	char confirm;
-	bool userChoice;
-
+	
 	do {
-		game game;
-		game.play_game();
+		game game;				
+		game.play_game();		
 
 		std::cout << "\nIf you want to play again press [Y], if you want to exit game press [N]\n";
 		std::cin >> confirm;
 
-	} while (confirm == 'y');
+	} while (confirm == 'y' || confirm == 'Y');
 
 	return 0;
 }

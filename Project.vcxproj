@@ -131,7 +131,6 @@
     <ClCompile Include="game.cpp" />
     <ClCompile Include="player_list.cpp" />
     <ClCompile Include="cosole_window.cpp" />
-    <ClCompile Include="remist_test.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game.h" />

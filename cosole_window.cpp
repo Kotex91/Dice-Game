@@ -7,18 +7,16 @@ console_window::console_window() {}
 
 void console_window::set_intro()
 {
-	HWND console = GetConsoleWindow();
-
-	// Ustawienie tytu³u okna konsoli
-	SetConsoleTitle(L"Dice Game!");
+	HWND console = GetConsoleWindow();		
+	SetConsoleTitle(L"Dice Game!");				
 
 	using std::cout;
 	using std::endl;
 	using std::setw;
 	using std::setfill;
 
-	cout << setfill('*') << setw(120) << "*" << endl;
-	cout << setfill(' ') << std::setw(60) << "DICE GAME!" << endl;
+	cout << setfill('*') << setw(120) << "*" << endl;				 
+	cout << setfill(' ') << std::setw(60) << "DICE GAME!" << endl;	 					
 	cout << setfill('*') << setw(120) << "*" << endl;
 	cout << "\nRules:" << endl;
 	cout << "\t-Minimum number of players - 2" << endl;

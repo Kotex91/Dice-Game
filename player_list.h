@@ -6,7 +6,7 @@
 class player_list
 {
 public:
-	player_list();												//konstruktor
+	player_list();												
 	
 	void set_player_list();
 	const std::vector<std::string>& get_player_names() const;
